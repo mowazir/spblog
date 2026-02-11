@@ -1,13 +1,13 @@
 <x-layout>
 
-    @if ($article->count() )
-    <div class="mt-6 "">
+    @if ($article )
+    <div class="mt-6 ">
 
     <h3> Your Wiki-thoughts are : </h3>
     <ul class="mt-6 grid grid-cols-2 gap-x-6 gap-y-4">
     @foreach($article as $art)
         <x-article-card href="{{ route('article.show', ['art'=>$art->id] ) }}" >
-            {{ $art->description }} <i class="text-sm text-red-400">{{ $art->state }} </i>
+            {{ $art->content }} <i class="text-sm text-red-400">{{ $art->cover_image }} </i>
         </x-article-card>
         
 
